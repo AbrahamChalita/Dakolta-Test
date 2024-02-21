@@ -116,22 +116,36 @@ overlay.addEventListener("click", testimonialsModalFunc);
 
 
 // contact form variables
+// const form = document.querySelector("[data-form]");
+// const formInputs = document.querySelectorAll("[data-form-input]");
+// const formBtn = document.querySelector("[data-form-btn]");
+
+// // add event to all form input field
+// for (let i = 0; i < formInputs.length; i++) {
+//   formInputs[i].addEventListener("input", function () {
+
+//     // check form validation
+//     if (form.checkValidity()) {
+//       formBtn.removeAttribute("disabled");
+//     } else {
+//       formBtn.setAttribute("disabled", "");
+//     }
+
+//   });
+// }
+
 const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
+  const subject = document.querySelector('[name="subject"]').value;
 
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
+  // Open default email client
+  window.location.href = `mailto:${'danieltp.contact@gmail.com'}?subject=${subject}`;
+})
 
-  });
+window.onload = function () {
+  form.reset();
 }
 
 
@@ -157,3 +171,5 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+

@@ -490,7 +490,6 @@ main {
 .about-text p { margin-bottom: 15px; }
 
 .about {
-  background-image: url("../images/DakoltaWebPage2.png")
   background-repeat: no-repeat;
   background-position: center center;
   min-height: 500px; /* O la altura que prefieras */
@@ -939,16 +938,6 @@ main {
   }
 }
 
-/* Inicia la barra de progreso una vez se cargue la página */
-/* Puede ser necesario usar JavaScript para iniciar la animación cuando esté en el viewport */
-document.addEventListener("DOMContentLoaded", function() {
-  var skillFills = document.querySelectorAll('.skill-progress-fill');
-  skillFills.forEach(function(el) {
-    var value = el.parentElement.previousElementSibling.querySelector('data').value;
-    el.style.width = value + '%';
-  });
-});
-
 
 /*-----------------------------------*\
   #PORTFOLIO
@@ -1225,7 +1214,7 @@ document.addEventListener("DOMContentLoaded", function() {
 .form-title { margin-bottom: 20px; }
 
 .input-wrapper {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr;
   gap: 25px;
   margin-bottom: 25px;
